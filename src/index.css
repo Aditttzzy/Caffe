@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 98%;
+    --foreground: 24 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+
+    --primary: 28 50% 35%;
+    --primary-foreground: 30 25% 98%;
+
+    --secondary: 30 30% 92%;
+    --secondary-foreground: 28 50% 35%;
+
+    --muted: 30 20% 92%;
+    --muted-foreground: 24 5% 45%;
+
+    --accent: 28 20% 92%;
+    --accent-foreground: 28 50% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 28 50% 35%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 24 10% 10%;
+    --foreground: 30 25% 98%;
+
+    --card: 24 10% 10%;
+    --card-foreground: 30 25% 98%;
+
+    --popover: 24 10% 10%;
+    --popover-foreground: 30 25% 98%;
+
+    --primary: 28 50% 35%;
+    --primary-foreground: 30 25% 98%;
+
+    --secondary: 28 10% 20%;
+    --secondary-foreground: 30 25% 98%;
+
+    --muted: 28 10% 20%;
+    --muted-foreground: 30 10% 80%;
+
+    --accent: 28 10% 20%;
+    --accent-foreground: 30 25% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 28 10% 20%;
+    --input: 28 10% 20%;
+    --ring: 28 50% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .coffee-button {
+    @apply bg-coffee hover:bg-coffee-dark text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 font-medium;
+  }
+
+  .nav-link {
+    @apply relative overflow-hidden inline-block transition-colors duration-300 hover:text-coffee-dark dark:hover:text-coffee-light;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute w-full h-0.5 bg-coffee scale-x-0 bottom-0 left-0 transition-transform duration-300 origin-bottom-right;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+
+  .nav-link-active {
+    @apply text-coffee-dark dark:text-coffee-light;
+  }
+
+  .nav-link-active::after {
+    @apply scale-x-100;
+  }
+
+  .coffee-card {
+    @apply bg-white dark:bg-coffee-black rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+  }
+
+  .image-zoom {
+    @apply transition-transform duration-500 ease-in-out hover:scale-105;
+  }
+
+  .coffee-gradient {
+    @apply bg-gradient-to-r from-coffee-dark to-coffee;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .smoke-animation {
+    @apply animate-smoke opacity-0 absolute;
+  }
+
+  .scroll-indicator {
+    @apply absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white animate-bounce;
+  }
+}
