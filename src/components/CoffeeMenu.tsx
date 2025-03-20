@@ -10,7 +10,7 @@ const coffeeItems: CoffeeProduct[] = [
   {
     id: "cappuccino-1",
     name: 'Cappuccino',
-    description: 'Kopi espresso dengan susu dan foam yang creamy',
+    description: 'Kopi espreso dengan susu dan foam yang creamy',
     price: 35000,
     image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
     category: "Espresso Based",
